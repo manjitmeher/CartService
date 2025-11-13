@@ -336,7 +336,6 @@ public class CartServiceImpl implements CartService {
 	
 	private Future<ResponseEntity<AddressDTO>> getSelectedAddress(HttpHeaders header, Long addressId){
 		String userAddressURL = "http://UserService/user/getSelectedAddress/" + addressId;
-		
 		return executor.submit(()-> restTemplate.exchange(userAddressURL,
 				   										  HttpMethod.GET,
 				   										  new HttpEntity<>(header),
