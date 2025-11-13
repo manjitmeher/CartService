@@ -1,0 +1,23 @@
+server:
+  port: 3333
+
+spring:
+  application:
+    name: CartService
+
+  config:
+    import: "consul:"
+
+  cloud:
+    consul:
+      discovery:
+        hostname: localhost
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        prefixes: 
+        - config
+        default-context: application
+        profile-separator: '::'
+        format: YAML
